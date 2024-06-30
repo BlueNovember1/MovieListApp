@@ -1,0 +1,31 @@
+<article class="m-3">
+  <h2>Book details</h2>
+  <section>
+    <div class="card">
+      <div class="card-body">
+        <p>Title: {{ book.title }}</p>
+        <p>Author: {{ book.author }}</p>
+        <p>Year: {{ book.year }}</p>
+        <p>Description: {{ book.description }}</p>
+<!--        powrót do ksiązek-->
+        <a [routerLink]="['/books']" class="card-link">Go back to List</a>
+      </div>
+    </div>
+  </section>
+</article>
+<article class="m-3">
+  <div class="m-3">
+    <h4>Reviews ({{ reviews.length }})</h4>
+  </div>
+
+  <section>
+<!--Iteracja reviwes-->
+    <div class="m-3 small" *ngFor="let review of reviews">
+      <bs-book-review [review]="review"></bs-book-review>
+    </div>
+<!--Sekacja towrzenia receznji-->
+    <div class="m-3 small">
+      <bs-book-review-creator (reviewAdded)="handleReviewAdded($event)" [bookId]="book.id"></bs-book-review-creator>
+    </div>
+  </section>
+</article>

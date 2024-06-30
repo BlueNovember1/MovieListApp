@@ -1,0 +1,49 @@
+<article class="m-3">
+  <h2>Book edit</h2>
+  <section>
+    <div class="card">
+      <!-- Formularz  -->
+      <div class="card-body">
+        <form [formGroup]="bookEditForm" (ngSubmit)="onSubmit()" class="row g-3" novalidate>
+          <div class="form-group">
+<!--            tytuł-->
+            <label for="title" class="form-label">Title</label>
+            <input id="title" class="form-control" type="text" formControlName="title" [ngClass]="{ 'is-invalid': getValidationErrors('title').length }" />
+            <div class="invalid-feedback" *ngFor="let error of getValidationErrors('title')">
+              {{ error }}
+            </div>
+          </div>
+          <div class="form-group">
+<!--            autor-->
+            <label for="author" class="form-label">Author</label>
+            <input id="author" class="form-control" type="text" formControlName="author" [ngClass]="{ 'is-invalid': getValidationErrors('author').length }" />
+            <div class="invalid-feedback" *ngFor="let error of getValidationErrors('author')">
+              {{ error }}
+            </div>
+          </div>
+<!--          rok-->
+          <div class="form-group">
+            <label for="year" class="form-label">Year</label>
+            <input id="year" class="form-control" type="number" formControlName="year" [ngClass]="{ 'is-invalid': getValidationErrors('year').length }" />
+            <div class="invalid-feedback" *ngFor="let error of getValidationErrors('year')">
+              {{ error }}
+            </div>
+          </div>
+<!--          opis-->
+          <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" class="form-control" formControlName="description" rows="5" [ngClass]="{ 'is-invalid': getValidationErrors('description').length }"></textarea>
+            <div class="invalid-feedback" *ngFor="let error of getValidationErrors('description')">
+              {{ error }}
+            </div>
+          </div>
+<!--          przycksi-->
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary mx-1" [disabled]="!bookEditForm.valid || bookEditForm.pristine">Save</button>
+            <button type="button" class="btn btn-secondary" routerLink="/books">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</article>
