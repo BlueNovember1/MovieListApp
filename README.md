@@ -1,5 +1,10 @@
+
+
+
+
 # Bookstore
 Bazowe repozytorium dla listy 5 (przedmiot "Projekt i implementacja systemów webowych").
+https://pwr-piisw.github.io/materialy/?fbclid=IwAR17V-kFxh4Tzk6sWw4iH0y2ifvXSTILqUVUbpiy5jWcvBAZCopBWhVw_JM
 
 ## Instalacja narzędzi
 Do pracy w trybie developerskim niezbędny jest `nodeJS` w wersji 14 lub 16. 
